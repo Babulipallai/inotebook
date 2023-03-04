@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./components/Home";
 import About from "./components/About";
 import NoteState from "./context/notes/NoteState";
+import AlertComp from "./components/AlertComp";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <NoteState>
         <Router>
           <NavbarComp />
+          <AlertComp alert="This is amazing React App"/>
           <div className="container">
             <Routes>
               <Route exact path="/" element={<Home />}></Route>

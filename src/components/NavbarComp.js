@@ -8,9 +8,7 @@ import Form from "react-bootstrap/Form";
 
 const NavbarComp = () => {
   let location = useLocation();
-  useEffect(() => {
-    console.log(location.pathname);
-  }, [location]);
+  
   return (
     <Navbar bg="warning" variant="dark" expand="lg">
       <Container>

@@ -1,5 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
 
 const Noteitem = (props) => {
   const { note } = props;
@@ -14,11 +16,9 @@ const Noteitem = (props) => {
         >
           <Card.Body>
             <Card.Title>{note.title}</Card.Title>
-            <Card.Text>
-              {note.description} Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. At, hic magni dolorum excepturi obcaecati eos ad
-              perferendis deserunt magnam rerum.
-            </Card.Text>
+            <Card.Text>{note.description}</Card.Text>
+            <MdDelete style={{fontSize:"135%", cursor: "pointer"}}/>
+            <FaEdit style={{marginLeft: "5%", fontSize:"135%", cursor: "pointer"}}/>
           </Card.Body>
         </Card>
       ))}
