@@ -14,19 +14,21 @@ const NavbarComp = () => {
   return (
     <Navbar bg="warning" variant="dark" expand="lg">
       <Container>
-        <Nav.Link href="/">iNotebook</Nav.Link>
+        <Nav.Link href="/" style={{fontWeight: "bold", fontSize:"200%"}}>iNotebook</Nav.Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto" style={{marginLeft: "2%"}}>
             <Nav.Link
               className={`${location.pathname === "/" ? "active" : ""}`}
               href="/"
+              style={{fontSize: "120%"}}
             >
               Home
             </Nav.Link>
             <Nav.Link
               className={`${location.pathname === "/about" ? "active" : ""}`}
               href="/about"
+              style={{fontSize: "120%"}}
             >
               About
             </Nav.Link>
@@ -39,7 +41,7 @@ const NavbarComp = () => {
               aria-label="Search"
             />
             <Button variant="outline-success" type="submit">
-              Success
+              Search
             </Button>
           </Form>
         </Navbar.Collapse>
