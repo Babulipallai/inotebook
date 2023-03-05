@@ -34,7 +34,7 @@ const AddNote = () => {
             <Form.Check type="checkbox" label="Check me out" />
           </Form.Group>
           <Button variant="primary" type="submit" onClick={handleSubmit}>
-            Submit
+            Add Note
           </Button>
         </Form>
       </div>
