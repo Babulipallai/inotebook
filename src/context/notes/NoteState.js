@@ -69,8 +69,33 @@ const NoteState = (props) => {
   ];
 
   const [notes, setNotes] = useState(notesInitial);
+
+  // Add a Note
+  const addNote = (title, description, tag)=>{
+    // TODO: API call
+    const note = {
+      "_id": "640312a3ac49cbab8f145ddb",
+      "user": "63ff0fc61369639d716fd646",
+      "title": title,
+      "description": description,
+      "tag": tag,
+      "date": "2023-03-04T09:42:59.084Z",
+      "__v": 0
+    };
+    setNotes(notes.concat(note));
+  }
+
+  // Delete a Note
+  const deleteNote = () => {
+
+  }
+
+  // Edit a Note
+  const editNote = () => {
+
+  }
   return (
-    <NoteContext.Provider value={{ notes, setNotes }}>
+    <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote }}>
       {props.children}
     </NoteContext.Provider>
   );
