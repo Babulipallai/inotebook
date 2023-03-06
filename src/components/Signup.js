@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const Signup = () => {
+const Signup = (props) => {
   const [credentials, setCredentials] = useState({
     name: "",
     email: "",
@@ -28,9 +28,14 @@ const Signup = () => {
       }),
     });
     const json = await response.json();
-
-    localStorage.setItem("token", json.authtoken);
-    navigate("/");
+    if (json.success) {
+      // Save the auth token and redirect
+      localStorage.setItem("token", json.authtoken);
+      navigate("/");
+      props.showAlert("Account created successfully", "success")
+    } else {
+    props.showAlert("Invalid credentials", "danger")
+    }
   };
 
   const onChange = (e) => {

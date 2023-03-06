@@ -24,6 +24,7 @@ const Noteitem = (props) => {
               style={{ fontSize: "135%", cursor: "pointer" }}
               onClick={() => {
                 deleteNote(note._id);
+                props.showAlert("Deleted successfully", "success");
               }}
             />
             <FaEdit

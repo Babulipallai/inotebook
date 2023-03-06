@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-const Notes = () => {
+const Notes = (props) => {
   const context = useContext(noteContext);
   const { notes, getNote, editNote } = context;
 
@@ -42,12 +42,13 @@ const Notes = () => {
   const handleClose = () => {
     editNote(note.id, note.etitle, note.edescription, note.etag);
     setShow(false);
+    props.showAlert("Updated successfully", "success");
   };
   const handleShow = () => setShow(true);
 
   return (
     <>
-      <AddNote />
+      <AddNote showAlert={props.showAlert} />
       <Button
         ref={ref}
         variant="primary"
@@ -118,7 +119,12 @@ const Notes = () => {
         </div>
         {notes.map((note) => {
           return (
-            <Noteitem key={note._id} updateNote={updateNote} note={note} />
+            <Noteitem
+              key={note._id}
+              updateNote={updateNote}
+              showAlert={props.showAlert}
+              note={note}
+            />
           );
         })}
       </div>

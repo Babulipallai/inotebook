@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import noteContext from "../context/notes/noteContext";
 
-const AddNote = () => {
+const AddNote = (props) => {
   const context = useContext(noteContext);
   const { addNote } = context;
 
@@ -21,6 +21,7 @@ const AddNote = () => {
       description: "",
       tag: "",
     });
+    props.showAlert("Updated successfully", "success");
   };
 
   const onChange = (e) => {
