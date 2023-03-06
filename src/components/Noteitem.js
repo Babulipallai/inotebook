@@ -7,8 +7,7 @@ import noteContext from "../context/notes/noteContext";
 const Noteitem = (props) => {
   const context = useContext(noteContext);
   const { deleteNote } = context;
-
-  const { note } = props;
+  const { note, updateNote } = props;
   return (
     <div className="col-md-3">
       {["Success"].map((variant) => (
@@ -29,6 +28,9 @@ const Noteitem = (props) => {
             />
             <FaEdit
               style={{ marginLeft: "5%", fontSize: "135%", cursor: "pointer" }}
+              onClick={() => {
+                updateNote(note);
+              }}
             />
           </Card.Body>
         </Card>

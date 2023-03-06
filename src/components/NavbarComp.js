@@ -31,16 +31,9 @@ const NavbarComp = () => {
               About
             </Nav.Link>
           </Nav>
-          <Form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <Button variant="outline-success" type="submit">
-              Search
-            </Button>
+          <Form className="d-flex">
+          <Button href="/login" className="mx-2">Login</Button>
+          <Button href="/signup" className="mx-2">Signup</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
