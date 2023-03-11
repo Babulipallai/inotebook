@@ -5,14 +5,19 @@ import Noteitem from "./Noteitem";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router-dom";
 
 const Notes = (props) => {
   const context = useContext(noteContext);
+  let navigate = useNavigate();
   const { notes, getNote, editNote } = context;
 
   useEffect(() => {
-    getNote();
-    // eslint-disable-next-line
+    if (localStorage.getItem("token")) {
+      getNote();
+    } else {
+      navigate("/login");
+    }
   }, []);
 
   const ref = useRef(null);
